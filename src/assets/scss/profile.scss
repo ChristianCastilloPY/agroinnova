@@ -1,0 +1,35 @@
+.custom-styles{
+    #react-select-2-listbox{
+        z-index: 2;
+    }
+}
+
+.preview-container-stepper{
+
+    .MuiStepLabel-iconContainer, .MuiStepLabel-alternativeLabel {
+        span{
+            font-size: 0.7em;
+        }
+    }
+    svg{
+        font-size: 15px;
+    }
+}
+
+.preview-error-container{
+    margin: 16px auto 0 auto;
+    width: 200px;
+    .error-container{
+        margin: auto;
+        width: 200px;
+        .sa{
+            width: 20px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .box-color-selector{
+        transform: translateX(-100px);
+    }
+}

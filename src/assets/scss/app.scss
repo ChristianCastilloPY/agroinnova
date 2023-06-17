@@ -1,0 +1,112 @@
+@import "variables";
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  .container {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .sidebar{
+
+    &.active{
+      .float-button {
+        transition: 0.2s;
+        margin-left: 215px;
+  
+        .MuiButtonBase-root {
+          transition: 0.5s;
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    .float-button{
+      z-index: 1201 !important;
+      position: sticky;
+      margin-left: 15px;
+      bottom: 20px;
+      transition: 0.5s;
+      text-align: left;
+      width: 70px;
+      margin-top: -70px;
+    }
+
+    .modal-container{
+      display: flex;
+      justify-content: right;
+
+      &:first-child{
+        position: sticky;
+      }
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  // place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: roboto;
+}
+
+.App{
+  width: 100%;
+}
+
+.dark{
+  background-color: #193b5f;
+  h1,h2,h3,h4,h5,h6,p,a{
+    color: white;
+  }
+}
+
+.icon, .text {
+  font-size: 18px;
+  &.success-color{
+      color: $success-color
+  }
+  
+  &.error-color{
+      color: $error-color
+  }
+
+  &.grayscale{
+    color: $grayscale
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  -webkit-text-fill-color: black;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (max-width: 450px) {
+  body{
+    .button-container{
+      margin-left: 16px;
+      .MuiButton-root {
+        margin: 5px 0;
+      }
+    }
+    footer{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.custom-gutter-horizontal{
+    width: 5px;
+    background: #297348;
+    .custom-dragger-horizontal{
+        width: 2.5px;
+        height: 24px;
+        background: white;
+        border-radius: 5px;
+    }
+}
+
+.__dbk__container{
+    &.Horizontal{
+        .__dbk__child-wrapper {
+            background-color: white;
+            z-index: 1;
+        }
+    }
+}
+
+.detail-container{
+
+    .MuiGrid-container {
+        .MuiButtonBase-root {
+            margin: 5px 0 5px 0;
+        }
+    }
+
+    .MuiDivider-root{
+        height: 10px;
+        width: 100%;
+        border-color: #202124;
+    }
+
+    .MuiButtonBase-root{
+        font-size: 0.7rem;
+    }
+}
