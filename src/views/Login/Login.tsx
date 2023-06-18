@@ -1,6 +1,6 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import LoginForm from "./LoginForm";
-import imgLogin from "../../assets/img/smartfarm.png";
+import imgLogin from "../../assets/img/smartfarm.svg";
 
 function Login() {
   const year = new Date().getFullYear();
@@ -23,7 +23,19 @@ function Login() {
               <Grid
                 item
                 sm={12}
-                md={6}
+                md={5}
+                sx={{ display: { xs: "none", md: "flex" } }}
+              >
+                <img
+                  src={imgLogin}
+                  alt="imagelogin"
+                  className="right-img-login"
+                />
+              </Grid>
+              <Grid
+                item
+                sm={12}
+                md={7}
                 sx={{
                   height: "100%",
                   display: "flex",
@@ -32,18 +44,6 @@ function Login() {
                 }}
               >
                 <LoginForm />
-              </Grid>
-              <Grid
-                item
-                sm={12}
-                md={6}
-                sx={{ display: { xs: "none", md: "flex" } }}
-              >
-                <img
-                  src={imgLogin}
-                  alt="imagelogin"
-                  className="right-img-login"
-                />
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="caption">

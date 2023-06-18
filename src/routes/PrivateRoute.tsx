@@ -16,11 +16,7 @@ function PrivateRoute({ children }: IPrivateRoute) {
   } = useAuth();
 
   if (idParams) {
-    return token && user.operations?.includes(idParams) ? (
-      children
-    ) : (
-      <Navigate to="/login" />
-    );
+    return token ? children : <Navigate to="/login" />;
   }
   return token ? children : <Navigate to="/login" />;
 }

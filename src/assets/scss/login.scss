@@ -11,7 +11,7 @@
         overflow: hidden;
         .bg-img{
             // background: #2a2a2d;
-            background: url('../img/login-bg.jpg');
+            background: url('../img/fondo1.jpg');
             width: 100%;
             height: 100%;
             margin: auto;
@@ -30,7 +30,7 @@
                 left: 0;
                 bottom: 0;
                 transform-origin: top left;
-                transform: skewX(-180deg) translateX(50%)
+                transform: skewX(-180deg) translateX(40%)
             }
         }
         
@@ -68,10 +68,11 @@
             height: 100%;
 
             .right-img-login{
-                height: 80%;
-                width: 115%;
+                transform: translateX(-80px) scaleX(-1);
+                height: 100%;
+                width: 390px;
                 object-fit: cover;
-                filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+                filter: drop-shadow(-8px 5px 3px rgba(38, 37, 63, 0.4));
             }
         }
     }

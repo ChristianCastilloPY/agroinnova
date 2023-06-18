@@ -15,8 +15,6 @@ const adaptedUserLogin = (user: IEndpointUserLogin) => {
     idUser: user.id_user_admin,
     createdBy: user.created_by,
     urlImage: user.url_image,
-    operations: user.operations,
-    // resourcePermission: user.resource_permission,
   };
 
   return formattedUserLogin;

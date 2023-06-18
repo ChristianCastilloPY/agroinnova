@@ -10,7 +10,7 @@ import SidebarLayout from "../layouts/AppBarLayout";
 import Monitor from "../views/Monitor";
 import Alerts from "../views/Alerts";
 import Devices from "../views/Devices";
-import Users from "../views/USers";
+import Users from "../views/Users";
 
 function AppRoutes() {
   return (
