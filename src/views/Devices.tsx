@@ -3,6 +3,9 @@ import { IDevice } from "../models/IDevice";
 import Table, { ColumnsProps } from "../components/Table";
 import StatusColor from "../components/StatusColor";
 
+import { useState } from "react";
+import useSetModal from "../hooks/useSetModal";
+
 const DeviceColumns: ColumnsProps<IDevice>[] = [
   {
     label: "ID Client",
@@ -30,12 +33,26 @@ const DeviceColumns: ColumnsProps<IDevice>[] = [
     align: "center",
     type: "component",
     field: "status",
-    valueGetter: ({ row }) => <StatusColor {...row} />,
+    valueGetter: ({ row }) => <StatusColor
+      maxTemp={row.maxTemp}
+      minTemp={row.minTemp}
+      lastTempUpdate={row.lastTempUpdate}
+      idClient={row.idClient}
+    />
   }
 
 ]
 
 export default function Devices() {
+  const { isOpenModal, setModalUpdate } = useSetModal()
+  const [currentDevice, setCurrentDevice] = useState<IDevice>({} as IDevice)
+
+  const handleOnSelectedRow = (device: IDevice) => {
+    setCurrentDevice(device)
+    console.log(device)
+    setModalUpdate(true)
+  }
+
   return (
     <>
       {/* TODO Add modal with a form to modify data */}
@@ -43,6 +60,7 @@ export default function Devices() {
         columns={DeviceColumns}
         rows={devices}
         variant="normal"
+        onSelectedRow={handleOnSelectedRow}
       />
     </>
   );

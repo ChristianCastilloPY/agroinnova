@@ -14,7 +14,7 @@ const style = {
   p: 4,
 };
 
-interface ICustomModal {
+export interface ICustomModal {
   children: ReactNode;
   open: boolean;
   modalOpen: () => void;

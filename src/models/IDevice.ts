@@ -5,10 +5,15 @@ export interface IDeviceMetric {
 }
 
 export interface IDevice extends IDeviceMetric {
+    idDevice: string;
     idClient: string;
     name: string;
     host: string;
     port: number;
     token: string;
     description: string;
+}
+
+export interface IDeviceOnlineStatus {
+    [key: string]: boolean;
 }

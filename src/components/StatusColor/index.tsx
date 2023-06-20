@@ -1,19 +1,32 @@
 import { IDeviceMetric } from "../../models/IDevice"
+import { deviceIsOnline } from "../../mockdata/devices";
+import statusColors from "../../utils/statusColors";
+import CircleIcon from '@mui/icons-material/Circle';
+
+interface IStatusColorParams extends IDeviceMetric {
+  idClient: string;
+}
 
 export default function StatusColor({
+  idClient,
   maxTemp,
   minTemp,
   lastTempUpdate
-}: IDeviceMetric) {
+}: IStatusColorParams) {
+  const isOnline = deviceIsOnline(idClient)
   const isTempOk = lastTempUpdate <= maxTemp && lastTempUpdate >= minTemp
-  
+
   return (
     <>
-      {/* TODO Add Online status */}
-      {/* TODO Add Colors */}
-      <div>
-        {isTempOk ? 'Temp Ok' : 'Temp Not Ok'}
-      </div>
+      {
+        isOnline ?
+          (
+            isTempOk ?
+              <CircleIcon style={{color: statusColors.online}}/>
+              : <CircleIcon style={{color: statusColors.warning}} />
+          )
+          : <CircleIcon style={{color: statusColors.offline}} />
+      }
     </>
   )
 }
