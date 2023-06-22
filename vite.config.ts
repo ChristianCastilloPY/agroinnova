@@ -7,8 +7,8 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), splitVendorChunkPlugin()],
   base: "/agroinnova/",
+  plugins: [react(), splitVendorChunkPlugin()],
   // test: {
   //   globals: true,
   //   environment: "jsdom",
