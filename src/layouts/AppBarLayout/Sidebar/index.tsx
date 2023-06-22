@@ -50,7 +50,7 @@ const menuItems = [
     type: "menu",
     icon: <QueryStatsIcon />,
     label: "Monitoreo",
-    path: "/monitor",
+    path: "/agroinnova/monitor",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
   },
   // {
@@ -62,7 +62,7 @@ const menuItems = [
     type: "menu",
     icon: <ImportantDevicesIcon />,
     label: "Dispositivos",
-    path: "/devices",
+    path: "/agroinnova/devices",
     role: ["SUPER_ADMIN"],
   },
   {
@@ -74,14 +74,14 @@ const menuItems = [
     type: "menu",
     icon: <PrivacyTipIcon />,
     label: "Alertas",
-    path: "/alerts",
+    path: "/agroinnova/alerts",
     role: ["SUPER_ADMIN"],
   },
   {
     type: "menu",
     icon: <GroupIon />,
     label: "Usuarios",
-    path: "/users",
+    path: "/agroinnova/users",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT"],
   },
 ];
