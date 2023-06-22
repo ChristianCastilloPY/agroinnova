@@ -24,17 +24,17 @@ function ResponsiveAppBar() {
   const settings = [
     {
       title: "Mi Perfil",
-      action: () => navigate("/profile"),
+      action: () => navigate("/agroinnova/profile"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
       title: "Ver Logs",
-      action: () => navigate("/logs"),
+      action: () => navigate("/agroinnova/logs"),
       role: ["SUPER_ADMIN"],
     },
     {
       title: "Dashboard",
-      action: () => navigate("/"),
+      action: () => navigate("/agroinnova/"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {

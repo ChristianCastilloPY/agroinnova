@@ -95,19 +95,19 @@ function SidebarMenu() {
 
   const listItem = ({ label, path, icon, idOperation }: IListItemsProps) => (
     <ListItem key={label} disablePadding>
-      {/* <ListItemButton onClick={() => navigate(path || '/')}> */}
+      {/* <ListItemButton onClick={() => navigate(path || '/agroinnova/')}> */}
       <ListItemButton
         onClick={() => {
           if (idOperation) {
             return navigate({
-              pathname: path || "/",
+              pathname: path || "/agroinnova/",
               search: createSearchParams({
                 id: idOperation,
                 resource: label,
               }).toString(),
             });
           }
-          return navigate(path || "/");
+          return navigate(path || "/agroinnova/");
         }}
       >
         <ListItemIcon>{icon}</ListItemIcon>
@@ -122,7 +122,7 @@ function SidebarMenu() {
       type: "menu",
       icon: <SettingsIcon />,
       label: "Mi perfil",
-      action: () => navigate("/profile"),
+      action: () => navigate("/agroinnova/profile"),
     },
     {
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],

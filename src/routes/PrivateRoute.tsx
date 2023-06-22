@@ -16,9 +16,9 @@ function PrivateRoute({ children }: IPrivateRoute) {
   } = useAuth();
 
   if (idParams) {
-    return token ? children : <Navigate to="/login" />;
+    return token ? children : <Navigate to="/agroinnova/login" />;
   }
-  return token ? children : <Navigate to="/login" />;
+  return token ? children : <Navigate to="/agroinnova/login" />;
 }
 
 export default PrivateRoute;

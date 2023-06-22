@@ -11,7 +11,7 @@ function PublicRoute({ children }: IPublicRoute) {
     userTokens: { token },
   } = useAuth();
 
-  return token ? <Navigate to="/" /> : children;
+  return token ? <Navigate to="/agroinnova/" /> : children;
 }
 
 export default PublicRoute;
