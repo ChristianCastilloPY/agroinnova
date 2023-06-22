@@ -16,7 +16,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/dashboard"
         element={
           <PublicRoute>
             <SidebarLayout />
@@ -24,7 +24,7 @@ function AppRoutes() {
         }
       >
         <Route
-          path="/"
+          path="/dashboard2"
           element={
             <PublicRoute>
               <Dashboard />
