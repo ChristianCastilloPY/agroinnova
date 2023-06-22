@@ -16,7 +16,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/agroinnova"
         element={
           <PublicRoute>
             <SidebarLayout />
@@ -24,7 +24,7 @@ function AppRoutes() {
         }
       >
         <Route
-          path="/"
+          path="/agroinnova"
           element={
             <PublicRoute>
               <Dashboard />
@@ -32,7 +32,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/monitor"
+          path="/agroinnova/monitor"
           element={
             <PublicRoute>
               <Monitor />
@@ -40,7 +40,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/alerts"
+          path="/agroinnova/alerts"
           element={
             <PublicRoute>
               <Alerts />
@@ -48,7 +48,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/devices"
+          path="/agroinnova/devices"
           element={
             <PublicRoute>
               <Devices />
@@ -56,7 +56,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/users"
+          path="/agroinnova/users"
           element={
             <PublicRoute>
               <Users />
@@ -65,7 +65,7 @@ function AppRoutes() {
         />
       </Route>
       <Route
-        path="/login"
+        path="/agroinnova/login"
         element={
           <PublicRoute>
             <BaseLayout>
