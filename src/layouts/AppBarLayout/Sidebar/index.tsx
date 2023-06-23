@@ -23,7 +23,7 @@ import { styled } from "@mui/material/styles";
 // import { useAuth } from '../../../../context/Auth'
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { useSidebar } from "../../../context/SidebarContext";
-import Logo from "../../../assets/img/Agroinnova_two_color.svg";
+import Logo from "../../../assets/img/agroinnova_two_color.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 

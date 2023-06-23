@@ -13,7 +13,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../../assets/img/Agroinnova_white.svg";
+import Logo from "../../../assets/img/agroinnova_white.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 
