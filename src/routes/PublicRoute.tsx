@@ -7,11 +7,12 @@ interface IPublicRoute {
 }
 
 function PublicRoute({ children }: IPublicRoute) {
-  const {
-    userTokens: { token },
-  } = useAuth();
+  // const {
+  //   userTokens: { token },
+  // } = useAuth();
+  const token = "123";
 
-  return token ? <Navigate to="/agroinnova/" /> : children;
+  return token !== null ? <Navigate to="/agroinnova/dashboard" /> : children;
 }
 
 export default PublicRoute;
