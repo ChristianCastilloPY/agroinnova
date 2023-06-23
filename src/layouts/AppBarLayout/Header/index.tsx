@@ -13,7 +13,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../../assets/img/logo_full_white.png";
+import Logo from "../../../assets/img/Agroinnova_white.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 
@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
               flexGrow: 1,
             }}
           >
-            <img src={Logo} alt="Logo Agroinnova" width="180" />
+            <img src={Logo} alt="Logo Agroinnova" width="110" />
           </Typography>
           <Typography
             variant="h5"

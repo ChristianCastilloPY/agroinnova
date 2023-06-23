@@ -23,7 +23,7 @@ import { styled } from "@mui/material/styles";
 // import { useAuth } from '../../../../context/Auth'
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { useSidebar } from "../../../context/SidebarContext";
-import Logo from "../../../assets/img/logo.png";
+import Logo from "../../../assets/img/Agroinnova_two_color.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 
@@ -146,7 +146,7 @@ function SidebarMenu() {
       onKeyDown={closeSidebar}
     >
       <TopSection>
-        <img src={Logo} alt="Agroinnova - Paraguay" width={80} />
+        <img src={Logo} alt="Agroinnova - Paraguay" width={100} />
       </TopSection>
       <List sx={{ flexGrow: 1 }}>
         {menuItems.map(({ label, icon, path, type, role }) => {

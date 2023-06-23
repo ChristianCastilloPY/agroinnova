@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CustomInputForm from "../../components/Form/CustomInputForm";
 import FormContainer from "../../components/Form/FormContainer";
 import LoginControllers from "../../controllers/LoginControllers";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/Agroinnova_icono.png";
 
 export default function LoginForm() {
   const { handleSubmitData, onSendSubmit, controlInputs, errorsData } =
