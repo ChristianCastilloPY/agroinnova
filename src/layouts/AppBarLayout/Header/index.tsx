@@ -71,7 +71,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/agroinnova/dashboard"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
