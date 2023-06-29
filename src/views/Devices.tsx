@@ -2,6 +2,7 @@ import devices from "../mockdata/devices";
 import { IDevice } from "../models/IDevice";
 import Table, { ColumnsProps } from "../components/Table";
 import StatusColor from "../components/StatusColor";
+import DeviceFormModal from "../components/DeviceFormModal";
 
 import { useState } from "react";
 import useSetModal from "../hooks/useSetModal";
@@ -49,18 +50,26 @@ export default function Devices() {
 
   const handleOnSelectedRow = (device: IDevice) => {
     setCurrentDevice(device)
-    console.log(device)
     setModalUpdate(true)
+  }
+
+  const handleModalClose = () => {
+    setModalUpdate(false)
   }
 
   return (
     <>
-      {/* TODO Add modal with a form to modify data */}
       <Table
         columns={DeviceColumns}
         rows={devices}
         variant="normal"
         onSelectedRow={handleOnSelectedRow}
+      />
+      <DeviceFormModal 
+        device={currentDevice}
+        open={isOpenModal}
+        modalOpen={() => {}}
+        modalClose={handleModalClose}
       />
     </>
   );
