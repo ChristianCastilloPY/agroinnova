@@ -34,28 +34,37 @@ const DeviceColumns: ColumnsProps<IDevice>[] = [
     align: "center",
     type: "component",
     field: "status",
-    valueGetter: ({ row }) => <StatusColor
-      maxTemp={row.maxTemp}
-      minTemp={row.minTemp}
-      lastTempUpdate={row.lastTempUpdate}
-      idClient={row.idClient}
-    />
-  }
-
-]
+    valueGetter: ({ row }) => (
+      <StatusColor
+        maxTemp={row.maxTemp}
+        minTemp={row.minTemp}
+        lastTempUpdate={row.lastTempUpdate}
+        idClient={row.idClient}
+      />
+    ),
+  },
+];
 
 export default function Devices() {
-  const { isOpenModal, setModalUpdate } = useSetModal()
-  const [currentDevice, setCurrentDevice] = useState<IDevice>({} as IDevice)
+  const { isOpenModal, setModalUpdate } = useSetModal();
+  const [currentDevice, setCurrentDevice] = useState<IDevice>({} as IDevice);
 
   const handleOnSelectedRow = (device: IDevice) => {
-    setCurrentDevice(device)
-    setModalUpdate(true)
-  }
+    setCurrentDevice(device);
+    setModalUpdate(true);
+  };
 
   const handleModalClose = () => {
-    setModalUpdate(false)
-  }
+    setModalUpdate(false);
+  };
+
+  const handleOnSubmitForm = (
+    event: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLDivElement>,
+    device: IDevice
+  ) => {
+    event.preventDefault();
+    console.log(device);
+  };
 
   return (
     <>
@@ -65,12 +74,15 @@ export default function Devices() {
         variant="normal"
         onSelectedRow={handleOnSelectedRow}
       />
-      <DeviceFormModal 
-        device={currentDevice}
-        open={isOpenModal}
-        modalOpen={() => {}}
-        modalClose={handleModalClose}
-      />
+      {isOpenModal && (
+        <DeviceFormModal
+          device={currentDevice}
+          open={isOpenModal}
+          modalOpen={() => {}}
+          modalClose={handleModalClose}
+          onSubmit={handleOnSubmitForm}
+        />
+      )}
     </>
   );
 }
