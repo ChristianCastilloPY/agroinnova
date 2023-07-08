@@ -18,16 +18,18 @@ export interface DeviceFormModalProps {
 }
 
 interface Action {
-  type: "set_value";
+  type: "set_value_str" | "set_value_number";
   name: keyof IDevice;
   value: string;
 }
 
 function reducer(state: IDevice, action: Action): IDevice {
-  console.log(action.value)
+  console.log(action.value);
   switch (action.type) {
     case "set_value_str":
       return { ...state, [action.name]: action.value };
+    case "set_value_number":
+      return { ...state, [action.name]: parseFloat(action.value) };
     default:
       return state;
   }
@@ -42,22 +44,38 @@ export default function DeviceFormModal({
 }: DeviceFormModalProps) {
   const [formState, dispatch] = useReducer(reducer, device);
 
-  const handleInputOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputOnChangeStr = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, value } = event.target;
 
     dispatch({
-      type: "set_value",
+      type: "set_value_str",
       name: name as keyof IDevice,
       value,
     });
   };
 
-  const handleOnSubmitForm = (event: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLDivElement>) => {
-    console.log(event.target)
+  const handleInputOnChangeNumber = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+
+    dispatch({
+      type: "set_value_number",
+      name: name as keyof IDevice,
+      value,
+    });
+  };
+
+  const handleOnSubmitForm = (
+    event: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLDivElement>
+  ) => {
+    console.log(event.target);
     if (onSubmit) {
-      onSubmit(event, formState)
+      onSubmit(event, formState);
     }
-  }
+  };
 
   return (
     <>
@@ -67,43 +85,43 @@ export default function DeviceFormModal({
             defaultValue={formState.name}
             label="Name"
             name="name"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeStr}
           />
           <CustomInput
             defaultValue={formState.description}
             label="Description"
             name="description"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeStr}
           />
           <CustomInput
             defaultValue={formState.host}
             label="Host"
             name="host"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeStr}
           />
           <CustomInput
             defaultValue={formState.port}
             label="Port"
             name="port"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeNumber}
           />
           <CustomInput
             defaultValue={formState.token}
             label="Token"
             name="token"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeStr}
           />
           <CustomInput
             defaultValue={formState.maxTemp}
             label="Max Temperature"
             name="maxTemp"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeNumber}
           />
           <CustomInput
             defaultValue={formState.minTemp}
             label="Min Temperature"
             name="minTemp"
-            onChange={handleInputOnChange}
+            onChange={handleInputOnChangeNumber}
           />
 
           <Button type="submit">Save</Button>
