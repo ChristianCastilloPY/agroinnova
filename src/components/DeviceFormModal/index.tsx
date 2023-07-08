@@ -2,7 +2,8 @@ import CustomModal from "../CustomModal";
 import { IDevice } from "../../models/IDevice";
 import FormContainer from "../Form/FormContainer";
 import CustomInput from "../Form/CustomInput";
-import React, { useReducer, useState } from "react";
+import React from "react";
+import useFormReducer from "../../hooks/useFormReducer";
 
 import { Button } from "@mui/material";
 
@@ -17,24 +18,6 @@ export interface DeviceFormModalProps {
   ) => void;
 }
 
-interface Action {
-  type: "set_value_str" | "set_value_number";
-  name: keyof IDevice;
-  value: string;
-}
-
-function reducer(state: IDevice, action: Action): IDevice {
-  console.log(action.value);
-  switch (action.type) {
-    case "set_value_str":
-      return { ...state, [action.name]: action.value };
-    case "set_value_number":
-      return { ...state, [action.name]: parseFloat(action.value) };
-    default:
-      return state;
-  }
-}
-
 export default function DeviceFormModal({
   device,
   open,
@@ -42,7 +25,7 @@ export default function DeviceFormModal({
   modalClose,
   onSubmit,
 }: DeviceFormModalProps) {
-  const [formState, dispatch] = useReducer(reducer, device);
+  const { formState, dispatch } = useFormReducer(device);
 
   const handleInputOnChangeStr = (
     event: React.ChangeEvent<HTMLInputElement>
