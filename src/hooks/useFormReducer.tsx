@@ -8,7 +8,10 @@ interface Action<E> {
 
 type FormReducer<E> = Reducer<E, Action<E>>;
 
-export default function useFormReducer<E>(initialState: E): {formState: E, dispatch: React.Dispatch<Action<E>>} {
+export default function useFormReducer<E>(initialState: E): {
+  formState: E;
+  dispatch: React.Dispatch<Action<E>>;
+} {
   const reducer: FormReducer<E> = (state: E, action: Action<E>) => {
     console.log(action.value);
     switch (action.type) {
@@ -23,5 +26,5 @@ export default function useFormReducer<E>(initialState: E): {formState: E, dispa
 
   const [formState, dispatch] = useReducer(reducer, initialState);
 
-  return {formState, dispatch};
+  return { formState, dispatch };
 }
