@@ -1,0 +1,34 @@
+.device-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
+  border-radius: 6px;
+  max-width: 400px;
+  height: 110px;
+  // box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+
+  .device-icon, .device-last-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .device-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+
+    .device-content-name {
+      font-style: italic;
+    }
+
+    .device-content-value {
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+}

@@ -14,6 +14,8 @@ export interface IDevice extends IDeviceMetric {
     description: string;
 }
 
+export type DeviceType = "temperature" | "humidity" | "earth" | "phosphate"; 
+
 export interface IDeviceOnlineStatus {
     [key: string]: boolean;
 }
