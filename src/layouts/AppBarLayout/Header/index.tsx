@@ -13,7 +13,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../../assets/img/logo_full_white.png";
+import Logo from "../../../assets/img/agroinnova_white.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 
@@ -24,17 +24,17 @@ function ResponsiveAppBar() {
   const settings = [
     {
       title: "Mi Perfil",
-      action: () => navigate("/profile"),
+      action: () => navigate("/agroinnova/profile"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
       title: "Ver Logs",
-      action: () => navigate("/logs"),
+      action: () => navigate("/agroinnova/logs"),
       role: ["SUPER_ADMIN"],
     },
     {
       title: "Dashboard",
-      action: () => navigate("/"),
+      action: () => navigate("/agroinnova/"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
@@ -71,7 +71,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/agroinnova/dashboard"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
               flexGrow: 1,
             }}
           >
-            <img src={Logo} alt="Logo Agroinnova" width="180" />
+            <img src={Logo} alt="Logo Agroinnova" width="110" />
           </Typography>
           <Typography
             variant="h5"

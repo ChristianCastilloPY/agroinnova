@@ -23,7 +23,7 @@ import { styled } from "@mui/material/styles";
 // import { useAuth } from '../../../../context/Auth'
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { useSidebar } from "../../../context/SidebarContext";
-import Logo from "../../../assets/img/logo.png";
+import Logo from "../../../assets/img/agroinnova_two_color.svg";
 import { useAuth } from "../../../context/AuthContext";
 import user from "../../../mockdata/userLogin";
 
@@ -50,7 +50,7 @@ const menuItems = [
     type: "menu",
     icon: <QueryStatsIcon />,
     label: "Monitoreo",
-    path: "/monitor",
+    path: "/agroinnova/monitor",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
   },
   // {
@@ -62,7 +62,7 @@ const menuItems = [
     type: "menu",
     icon: <ImportantDevicesIcon />,
     label: "Dispositivos",
-    path: "/devices",
+    path: "/agroinnova/devices",
     role: ["SUPER_ADMIN"],
   },
   {
@@ -74,14 +74,14 @@ const menuItems = [
     type: "menu",
     icon: <PrivacyTipIcon />,
     label: "Alertas",
-    path: "/alerts",
+    path: "/agroinnova/alerts",
     role: ["SUPER_ADMIN"],
   },
   {
     type: "menu",
     icon: <GroupIon />,
     label: "Usuarios",
-    path: "/users",
+    path: "/agroinnova/users",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT"],
   },
 ];
@@ -95,19 +95,19 @@ function SidebarMenu() {
 
   const listItem = ({ label, path, icon, idOperation }: IListItemsProps) => (
     <ListItem key={label} disablePadding>
-      {/* <ListItemButton onClick={() => navigate(path || '/')}> */}
+      {/* <ListItemButton onClick={() => navigate(path || '/agroinnova/')}> */}
       <ListItemButton
         onClick={() => {
           if (idOperation) {
             return navigate({
-              pathname: path || "/",
+              pathname: path || "/agroinnova/",
               search: createSearchParams({
                 id: idOperation,
                 resource: label,
               }).toString(),
             });
           }
-          return navigate(path || "/");
+          return navigate(path || "/agroinnova/");
         }}
       >
         <ListItemIcon>{icon}</ListItemIcon>
@@ -122,7 +122,7 @@ function SidebarMenu() {
       type: "menu",
       icon: <SettingsIcon />,
       label: "Mi perfil",
-      action: () => navigate("/profile"),
+      action: () => navigate("/agroinnova/profile"),
     },
     {
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
@@ -146,7 +146,7 @@ function SidebarMenu() {
       onKeyDown={closeSidebar}
     >
       <TopSection>
-        <img src={Logo} alt="Agroinnova - Paraguay" width={80} />
+        <img src={Logo} alt="Agroinnova - Paraguay" width={100} />
       </TopSection>
       <List sx={{ flexGrow: 1 }}>
         {menuItems.map(({ label, icon, path, type, role }) => {

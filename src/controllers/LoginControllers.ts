@@ -38,7 +38,7 @@ export default function LoginControllers() {
     try {
       loadingRequest.showLoading();
       //  function to login
-      navigate("/");
+      navigate("/agroinnova");
     } catch (error: any) {
       HandleError(error);
     } finally {

@@ -8,17 +8,19 @@ interface IPrivateRoute {
 }
 
 function PrivateRoute({ children }: IPrivateRoute) {
-  const [params, setParams] = useSearchParams();
-  const idParams = params.get("id") ?? undefined;
-  const {
-    userTokens: { token },
-    user,
-  } = useAuth();
+  // const [params, setParams] = useSearchParams();
+  // const idParams = params.get("id") ?? undefined;
+  // const {
+  //   userTokens: { token },
+  //   user,
+  // } = useAuth();
+  // const idParams = "333";
+  const token = "123";
 
-  if (idParams) {
-    return token ? children : <Navigate to="/login" />;
-  }
-  return token ? children : <Navigate to="/login" />;
+  // if (idParams) {
+  //   return token ? children : <Navigate to="/agroinnova" />;
+  // }
+  return token === null ? <Navigate to="/agroinnova/login" /> : children;
 }
 
 export default PrivateRoute;

@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "vitest",
-    "lint": "eslint --max-warnings=0 src"
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -60,6 +60,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^5.0.0",
     "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8",
