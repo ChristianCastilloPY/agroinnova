@@ -24,17 +24,12 @@ function ResponsiveAppBar() {
   const settings = [
     {
       title: "Mi Perfil",
-      action: () => navigate("/profile"),
+      action: () => navigate("/app/profile"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
-      title: "Ver Logs",
-      action: () => navigate("/logs"),
-      role: ["SUPER_ADMIN"],
-    },
-    {
       title: "Dashboard",
-      action: () => navigate("/"),
+      action: () => navigate("/app/"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {

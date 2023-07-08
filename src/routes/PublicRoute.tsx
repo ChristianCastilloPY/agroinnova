@@ -9,7 +9,7 @@ interface IPublicRoute {
 
 function PublicRoute({ children }: IPublicRoute) {
   const { userTokens } = useAuth();
-  return empty(userTokens) ? children : <Navigate to="/login" />;
+  return empty(userTokens) ? children : <Navigate to="/app/login" />;
 }
 
 export default PublicRoute;

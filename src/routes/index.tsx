@@ -16,7 +16,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/app/"
         element={
           <PrivateRoute>
             <SidebarLayout />
@@ -24,7 +24,7 @@ function AppRoutes() {
         }
       >
         <Route
-          path="/dashboard"
+          path="/app/dashboard"
           element={
             <PrivateRoute>
               <Dashboard />
@@ -32,7 +32,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/monitor"
+          path="/app/monitor"
           element={
             <PrivateRoute>
               <Monitor />
@@ -40,7 +40,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/alerts"
+          path="/app/alerts"
           element={
             <PrivateRoute>
               <Alerts />
@@ -48,7 +48,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/devices"
+          path="/app/devices"
           element={
             <PrivateRoute>
               <Devices />
@@ -56,7 +56,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/users"
+          path="/app/users"
           element={
             <PrivateRoute>
               <Users />
@@ -65,7 +65,7 @@ function AppRoutes() {
         />
       </Route>
       <Route
-        path="/login"
+        path="/app/login"
         element={
           <PublicRoute>
             <BaseLayout>

@@ -1,10 +1,10 @@
+import { useState } from "react";
 import devices from "../mockdata/devices";
 import { IDevice } from "../models/IDevice";
 import Table, { ColumnsProps } from "../components/Table";
 import StatusColor from "../components/StatusColor";
 import DeviceFormModal from "../components/DeviceFormModal";
 
-import { useState } from "react";
 import useSetModal from "../hooks/useSetModal";
 
 const DeviceColumns: ColumnsProps<IDevice>[] = [
