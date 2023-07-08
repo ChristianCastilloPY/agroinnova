@@ -9,6 +9,8 @@ import {
 
 import { IUserLogin } from "../models/IUserLogin";
 import queryClient from "../services/queryClient";
+import usePersistedState from "../hooks/usePersistedState";
+import { AUTH_USER_DATA, USER_TOKENS } from "../utils/constants";
 
 export interface IUserTokens {
   token: string;
@@ -29,8 +31,14 @@ interface IAuthContext {
 const AuthContext = createContext({} as IAuthContextData);
 
 function AuthProvider({ children }: IAuthContext) {
-  const [user, setUser] = useState<IUserLogin>({} as IUserLogin);
-  const [userTokens, setUserTokens] = useState<IUserTokens>({} as IUserTokens);
+  const [user, setUser] = usePersistedState<IUserLogin>(
+    AUTH_USER_DATA,
+    {} as IUserLogin
+  );
+  const [userTokens, setUserTokens] = usePersistedState<IUserTokens>(
+    USER_TOKENS,
+    {} as IUserTokens
+  );
 
   const setTokensForUser = useCallback(
     (tokens: IUserTokens) => {
@@ -39,7 +47,6 @@ function AuthProvider({ children }: IAuthContext) {
     },
     [setUserTokens]
   );
-
   const setDataOfUser = useCallback(
     (data: IUserLogin) => {
       setUser(data);

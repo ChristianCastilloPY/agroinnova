@@ -8,12 +8,12 @@ import {
 const adaptedUserLogin = (user: IEndpointUserLogin) => {
   const formattedUserLogin: IUserLogin = {
     email: user.email,
-    fname: user.fname,
-    lname: user.lname,
-    rolName: user.rol_name,
+    fName: user.f_name,
+    lName: user.l_name,
+    rolName: user.rol,
     status: user.status,
     idUser: user.id_user_admin,
-    createdBy: user.created_by,
+    createdAt: user.created_at,
     urlImage: user.url_image,
   };
 
@@ -22,7 +22,7 @@ const adaptedUserLogin = (user: IEndpointUserLogin) => {
 
 const adaptedUserToEndpointLogin = (user: IFormDataValues) => {
   const formattedUserToEndpointLogin: IFormDataValuesToEndpoint = {
-    email: user.user,
+    email: user.email,
     password: user.password,
   };
 

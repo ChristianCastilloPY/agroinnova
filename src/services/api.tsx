@@ -93,9 +93,8 @@ export async function requestApi<T>({
 
   const tokens = localStorage.getItem("token");
   const parseToken = JSON.parse(tokens || "{}");
-
-  if (Object.keys(parseToken).length > 0) {
-    headers.authorization = `Bearer ${parseToken.token}`;
+  if (tokens) {
+    headers.authorization = `Bearer ${parseToken}`;
   }
 
   Object.assign(requestParams, {

@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Navigate } from "react-router-dom";
+import empty from "is-empty";
 import { useAuth } from "../context/AuthContext";
 
 interface IPublicRoute {
@@ -7,12 +8,8 @@ interface IPublicRoute {
 }
 
 function PublicRoute({ children }: IPublicRoute) {
-  // const {
-  //   userTokens: { token },
-  // } = useAuth();
-  const token = "123";
-
-  return token !== null ? <Navigate to="/agroinnova/dashboard" /> : children;
+  const { userTokens } = useAuth();
+  return empty(userTokens) ? children : <Navigate to="/login" />;
 }
 
 export default PublicRoute;

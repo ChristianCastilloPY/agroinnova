@@ -15,7 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Logo from "../../../assets/img/agroinnova_white.svg";
 import { useAuth } from "../../../context/AuthContext";
-import user from "../../../mockdata/userLogin";
+// import user from "../../../mockdata/userLogin";
 
 function ResponsiveAppBar() {
   const { logout } = useAuth();
@@ -24,17 +24,17 @@ function ResponsiveAppBar() {
   const settings = [
     {
       title: "Mi Perfil",
-      action: () => navigate("/agroinnova/profile"),
+      action: () => navigate("/profile"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
       title: "Ver Logs",
-      action: () => navigate("/agroinnova/logs"),
+      action: () => navigate("/logs"),
       role: ["SUPER_ADMIN"],
     },
     {
       title: "Dashboard",
-      action: () => navigate("/agroinnova/"),
+      action: () => navigate("/"),
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
     },
     {
@@ -44,13 +44,13 @@ function ResponsiveAppBar() {
     },
   ];
 
-  // const { user } = useAuth();
+  const { user } = useAuth();
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
-  const rol = user.rolName ? user.rolName.split("_") : "";
+  const rol = user.rolName;
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -71,7 +71,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/agroinnova/dashboard"
+            href="/dashboard"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -111,18 +111,18 @@ function ResponsiveAppBar() {
                     variant="body2"
                     mr={2}
                     color="white"
-                  >{`${user.fname} ${user.lname}`}</Typography>
+                  >{`${user.fName} ${user.lName}`}</Typography>
                   <Typography
                     variant="caption"
                     mr={2}
                     color="white"
                     fontSize={{ xs: "0.4rem", sm: "0.75rem" }}
                   >
-                    {rol && `${rol[0]} ${rol[1]}`} - {user.email}
+                    {rol} - {user.email}
                   </Typography>
                 </Stack>
                 <Avatar
-                  alt={`${user.fname} ${user.lname}`}
+                  alt={`${user.fName} ${user.lName}`}
                   src={user.urlImage}
                 />
               </IconButton>

@@ -50,7 +50,7 @@ const menuItems = [
     type: "menu",
     icon: <QueryStatsIcon />,
     label: "Monitoreo",
-    path: "/agroinnova/monitor",
+    path: "/monitor",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
   },
   // {
@@ -62,7 +62,7 @@ const menuItems = [
     type: "menu",
     icon: <ImportantDevicesIcon />,
     label: "Dispositivos",
-    path: "/agroinnova/devices",
+    path: "/devices",
     role: ["SUPER_ADMIN"],
   },
   {
@@ -74,14 +74,14 @@ const menuItems = [
     type: "menu",
     icon: <PrivacyTipIcon />,
     label: "Alertas",
-    path: "/agroinnova/alerts",
+    path: "/alerts",
     role: ["SUPER_ADMIN"],
   },
   {
     type: "menu",
     icon: <GroupIon />,
     label: "Usuarios",
-    path: "/agroinnova/users",
+    path: "/users",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT"],
   },
 ];
@@ -95,19 +95,19 @@ function SidebarMenu() {
 
   const listItem = ({ label, path, icon, idOperation }: IListItemsProps) => (
     <ListItem key={label} disablePadding>
-      {/* <ListItemButton onClick={() => navigate(path || '/agroinnova/')}> */}
+      {/* <ListItemButton onClick={() => navigate(path || '/')}> */}
       <ListItemButton
         onClick={() => {
           if (idOperation) {
             return navigate({
-              pathname: path || "/agroinnova/",
+              pathname: path || "/",
               search: createSearchParams({
                 id: idOperation,
                 resource: label,
               }).toString(),
             });
           }
-          return navigate(path || "/agroinnova/");
+          return navigate(path || "/");
         }}
       >
         <ListItemIcon>{icon}</ListItemIcon>
@@ -122,7 +122,7 @@ function SidebarMenu() {
       type: "menu",
       icon: <SettingsIcon />,
       label: "Mi perfil",
-      action: () => navigate("/agroinnova/profile"),
+      action: () => navigate("/profile"),
     },
     {
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],

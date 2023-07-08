@@ -40,30 +40,29 @@ const MainContent = styled(Box)(
 );
 
 function SidebarLayout() {
-  const { userTokens, setDataOfUser } = useAuth();
+  const { userTokens, setDataOfUser, logout } = useAuth();
   const { sidebarToggle } = useSidebar();
   const loadingRequest = useLoadingRequest();
-
   useEffect(() => {
-    if (userTokens.token) {
+    if (userTokens) {
       loadingRequest.showLoading();
       Promise.all([
         requestApi<{ data: IEndpointUserLogin }>({
           domain: VITE_ASSET_URL,
           method: "GET",
-          // path: `/api-hub/v1/auth/users/admin/me`,
+          path: `/user`,
         }),
       ])
         .then((response) => {
           const user = {
             ...response[0].data,
-            url_image: avatar,
           };
+          console.log(user);
           setDataOfUser(adaptedUserLogin(user));
         })
         .catch((error) => {
           HandleError(error);
-          console.log(error);
+          logout();
         })
         .finally(() => {
           loadingRequest.hiddenLoading();

@@ -6,10 +6,10 @@ const user: IUserLogin = {
   rolName: "SUPER_ADMIN",
   status: "ACTIVE",
   email: "email1@gmail.com",
-  fname: "Leonardo",
-  lname: "Medina",
+  fName: "Leonardo",
+  lName: "Medina",
   urlImage: avatar,
-  createdBy: "19/10/2020",
+  createdAt: "19/10/2020",
 };
 
 export default user;

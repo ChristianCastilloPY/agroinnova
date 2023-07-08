@@ -36,9 +36,9 @@ export default function LoginForm() {
         </Grid>
         <Grid item xs={12}>
           <CustomInputForm
-            name="user"
+            name="email"
             control={controlInputs}
-            error={errorsData.user}
+            error={errorsData.email}
             label="Correo electrónico"
           />
         </Grid>
