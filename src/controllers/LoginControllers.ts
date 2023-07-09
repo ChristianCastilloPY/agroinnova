@@ -47,7 +47,7 @@ export default function LoginControllers() {
       await request({
         domain: VITE_ASSET_URL,
         method: "POST",
-        path: "login",
+        path: "/login",
         bodyParams: adaptedUserToEndpointLogin(data),
       }).then((res) => {
         setTokensForUser(res.data.data.token);
