@@ -54,7 +54,7 @@ export default function LoginForm() {
         <Box display="flex" justifyContent="right" width="100%">
           <Link
             style={{ color: "#297348", fontSize: "12px" }}
-            to="/agroinnova/lostpassword"
+            to="/lostpassword"
           >
             Olvidé mi contraseña
           </Link>

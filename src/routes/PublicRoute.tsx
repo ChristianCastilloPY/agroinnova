@@ -9,7 +9,7 @@ interface IPublicRoute {
 
 function PublicRoute({ children }: IPublicRoute) {
   const { userTokens } = useAuth();
-  return empty(userTokens) ? children : <Navigate to="/agroinnova/login" />;
+  return empty(userTokens) ? children : <Navigate to="/login" />;
 }
 
 export default PublicRoute;

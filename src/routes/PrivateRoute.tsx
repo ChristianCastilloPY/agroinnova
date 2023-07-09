@@ -11,7 +11,7 @@ interface IPrivateRoute {
 function PrivateRoute({ children }: IPrivateRoute) {
   const [params, setParams] = useSearchParams();
   const { userTokens } = useAuth();
-  return !empty(userTokens) ? children : <Navigate to="/agroinnova/login" />;
+  return !empty(userTokens) ? children : <Navigate to="/login" />;
 }
 
 export default PrivateRoute;
