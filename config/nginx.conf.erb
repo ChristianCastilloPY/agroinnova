@@ -44,7 +44,7 @@ http {
 
         location /agroinnova/ {
             add_header 'Cache-Control' "public, max-age=3600";
-            try_files $uri $uri/ /index.html;
+            try_files $uri $uri/ /agroinnova/index.html;
         }
     }
 }
