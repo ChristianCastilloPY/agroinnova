@@ -8,7 +8,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig(({ command }) => {
   const config = {
     plugins: [react()],
-    base: "/agroinnova",
+    base: "/agroinnova/",
     // test: {
     //   globals: true,
     //   environment: "jsdom",
@@ -17,7 +17,7 @@ export default defineConfig(({ command }) => {
   };
 
   if (command !== "serve") {
-    config.base = "/agroinnova";
+    config.base = "/agroinnova/";
   }
 
   return config;
