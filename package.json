@@ -1,5 +1,5 @@
 {
-  "name": "dashboard-agroinnova",
+  "name": "agroinnova",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,6 +8,7 @@
     "test": "vitest",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
