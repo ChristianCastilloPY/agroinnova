@@ -51,7 +51,7 @@ export default function LoginControllers() {
         bodyParams: adaptedUserToEndpointLogin(data),
       }).then((res) => {
         setTokensForUser(res.data.data.token);
-        navigate("/app");
+        navigate("/agroinnova");
       });
     } catch (error: any) {
       HandleError(error);
