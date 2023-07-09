@@ -1,0 +1,8 @@
+server {
+  listen $PORT;
+  server_name _;
+
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+}
