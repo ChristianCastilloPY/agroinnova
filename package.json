@@ -1,5 +1,4 @@
 {
-  "homepage": "https://leonarmed.github.io/agroinnova/",
   "name": "agroinnova",
   "private": true,
   "version": "1.0.0",
@@ -8,9 +7,7 @@
     "dev": "vite",
     "test": "vitest",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
