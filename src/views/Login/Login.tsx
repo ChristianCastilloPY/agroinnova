@@ -55,7 +55,7 @@ function Login() {
                   >
                     Agroinnova - Paraguay
                   </a>
-                  , All rights reserved.
+                  , All rights reserved
                 </Typography>
               </Grid>
             </Grid>
