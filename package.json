@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://agroinnova-app-cc0edb7680de.herokuapp.com/",
   "scripts": {
     "dev": "vite",
     "test": "vitest",
