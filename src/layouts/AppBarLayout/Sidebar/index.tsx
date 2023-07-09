@@ -50,7 +50,7 @@ const menuItems = [
     type: "menu",
     icon: <QueryStatsIcon />,
     label: "Monitoreo",
-    path: "/app/monitor",
+    path: "/agroinnova/monitor",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
   },
   // {
@@ -62,7 +62,7 @@ const menuItems = [
     type: "menu",
     icon: <ImportantDevicesIcon />,
     label: "Dispositivos",
-    path: "/app/devices",
+    path: "/agroinnova/devices",
     role: ["SUPER_ADMIN"],
   },
   {
@@ -74,14 +74,14 @@ const menuItems = [
     type: "menu",
     icon: <PrivacyTipIcon />,
     label: "Alertas",
-    path: "/app/alerts",
+    path: "/agroinnova/alerts",
     role: ["SUPER_ADMIN"],
   },
   {
     type: "menu",
     icon: <GroupIon />,
     label: "Usuarios",
-    path: "/app/users",
+    path: "/agroinnova/users",
     role: ["SUPER_ADMIN", "ADMIN_CLIENT"],
   },
 ];
@@ -100,14 +100,14 @@ function SidebarMenu() {
         onClick={() => {
           if (idOperation) {
             return navigate({
-              pathname: path || "/app/",
+              pathname: path || "/agroinnova",
               search: createSearchParams({
                 id: idOperation,
                 resource: label,
               }).toString(),
             });
           }
-          return navigate(path || "/app/");
+          return navigate(path || "/agroinnova");
         }}
       >
         <ListItemIcon>{icon}</ListItemIcon>
@@ -122,7 +122,7 @@ function SidebarMenu() {
       type: "menu",
       icon: <SettingsIcon />,
       label: "Mi perfil",
-      action: () => navigate("/app/profile"),
+      action: () => navigate("/agroinnova/profile"),
     },
     {
       role: ["SUPER_ADMIN", "ADMIN_CLIENT", "USER_CLIENT"],
