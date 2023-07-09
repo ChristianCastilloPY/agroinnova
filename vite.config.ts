@@ -15,10 +15,5 @@ export default defineConfig(({ command }) => {
     //   setupFiles: ["./src/setupTests.ts"],
     // },
   };
-
-  if (command !== "serve") {
-    config.base = "/agroinnova/";
-  }
-
   return config;
 });
